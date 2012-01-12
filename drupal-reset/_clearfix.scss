@@ -1,0 +1,16 @@
+@mixin clearfix-reset() {
+  .clearfix:after,
+  * html .clearfix,
+  *:first-child + html .clearfix {
+    @extend .drupal-reset-base;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '\0020';
+    display: table;
+    clear: both;
+    zoom: 1;
+  }
+}
