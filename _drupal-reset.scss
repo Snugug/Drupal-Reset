@@ -1,0 +1,32 @@
+//////////////////////////////
+// "Silent" Base Reset Class
+//////////////////////////////
+.drupal-reset-base {
+  height: 0;
+  width: 0;
+  content: '';
+  display: block;
+}
+
+//////////////////////////////
+// Imports
+//////////////////////////////
+@import "drupal-reset/clearfix";
+
+//////////////////////////////
+// Massive Mixin
+//////////////////////////////
+@mixin drupal-reset($options: 'all') {
+  
+  @if inOptions('clearfix-plus-class') {
+    @include clearfix-reset;
+
+    .clearfix {
+      @include clearfix;
+    }
+  }
+
+  @if inOptions('clearfix-no-class') {
+    @include clearfix-reset;
+  }
+}
